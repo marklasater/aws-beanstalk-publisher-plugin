@@ -79,7 +79,7 @@ public class AWSEBS3Uploader {
                 s3 = AWSEBUtils.getS3(credentials, Regions.fromName(bucketRegion));
         }
 
-        objectKey = AWSEBUtils.formatPath("%s/%s-%s.zip", keyPrefix, applicationName, versionLabel);
+        objectKey = AWSEBUtils.formatPath("%s/%s-%s.war", keyPrefix, applicationName, versionLabel);
 
         s3ObjectPath = "s3://" + AWSEBUtils.formatPath("%s/%s", bucketName, objectKey);
         FilePath rootFileObject = new FilePath(build.getWorkspace(), AWSEBUtils.getValue(build, listener, rootObject));
